@@ -1,19 +1,25 @@
 use std::collections::HashMap;
 use std::fs::{File, OpenOptions};
-use std::io::{Read, Seek, SeekFrom, Write};
+use std::io::{Seek, SeekFrom, Write};
 
 use super::types::{CellDelta, ChunkKey, WorldKey};
 
 pub type LocalKey = (u16, u16, u16);
 
 #[derive(Clone)]
-struct IndexRec {
+pub struct IndexRec {
+    #[allow(dead_code)]
     world: WorldKey,
+    #[allow(dead_code)]
     chunk: ChunkKey,
+    #[allow(dead_code)]
     local: LocalKey,
     // ここは最低限。必要なら後で拡張
+    #[allow(dead_code)]
     version: u32,
+    #[allow(dead_code)]
     parent_hash: u64,
+    #[allow(dead_code)]
     confidence: f32,
     // z は別で保持（map側に入れる）
 }

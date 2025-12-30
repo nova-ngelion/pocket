@@ -8,7 +8,6 @@ pub mod cpu;
 pub mod asm;
 
 
-use std::path::Path;
 
 use crate::pocket::lru::LruCache;
 
